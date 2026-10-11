@@ -1,0 +1,32 @@
+/* Blockcraft 3D - inventory / hotbar / crafting UI (Timmy). Loaded automatically by ui.js. */
+.bcui-root { position: absolute; inset: 0; pointer-events: none; z-index: 50; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; overflow: hidden; font: 12px monospace; }
+.bcui-root.bcui-fixed { position: fixed; }
+.bcui-root canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+.bcui-abs { position: absolute; }
+
+/* HUD hotbar */
+.bcui-hud { position: absolute; inset: 0; }
+.bcui-hotbar { position: absolute; pointer-events: auto; touch-action: none; }
+.bcui-hotbar .bcui-hslot { position: absolute; cursor: pointer; }
+.bcui-selector { position: absolute; pointer-events: none; }
+.bcui-name { position: absolute; pointer-events: none; transition: opacity .4s; }
+.bcui-name.bcui-fade { opacity: 0; }
+.bcui-invbtn { position: absolute; pointer-events: auto; padding: 0; border: 0; background: none; cursor: pointer; touch-action: manipulation; }
+.bcui-invbtn:focus-visible { outline: 2px solid #fff; }
+
+/* open screen */
+.bcui-screen { position: absolute; inset: 0; pointer-events: auto; touch-action: none; background: linear-gradient(rgba(16,16,16,.75), rgba(16,16,16,.82)); }
+.bcui-screen[hidden] { display: none; }
+.bcui-panel { position: absolute; }
+.bcui-slot { position: absolute; cursor: pointer; }
+.bcui-slot > canvas { position: absolute; left: 0; top: 0; pointer-events: none; }
+.bcui-slot.bcui-hover::before, .bcui-slot.bcui-drag::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.5); }
+.bcui-slot.bcui-drag::before { background: rgba(255,255,255,.35); }
+.bcui-toolbar { position: absolute; display: flex; gap: 6px; }
+.bcui-btn { pointer-events: auto; border: 0; padding: 0; background: none; cursor: pointer; touch-action: manipulation; }
+.bcui-btn:focus-visible { outline: 2px solid #fff; }
+
+/* held stack + tooltip */
+.bcui-cursor { position: absolute; pointer-events: none; z-index: 3; }
+.bcui-tip { position: absolute; pointer-events: none; z-index: 4; }
+.bcui-tip[hidden], .bcui-cursor[hidden] { display: none; }

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Blockcraft 3D</title>
+<meta name="description" content="Blockcraft 3D: a voxel survival game you play right in your browser.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 4 4%27%3E%3Cpath fill=%27%23866043%27 d=%27M0 1h4v3H0z%27/%3E%3Cpath fill=%27%236aa43a%27 d=%27M0 0h4v1.5H0z%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="style3d.css">
+</head>
+<body>
+<div id="game"></div>
+<div id="crosshair" aria-hidden="true"></div>
+<div id="hud">
+  <div class="bars"><div class="lbar"><div id="armor" role="img" aria-label="Armor" hidden></div><div id="hearts" role="img" aria-label="Health"></div></div><div class="rbar"><div id="air" role="img" aria-label="Air" hidden></div><div id="food" role="img" aria-label="Hunger"></div></div></div>
+  <div id="xpbar" role="img" aria-label="Level 0"><div class="xpfill"></div><span id="xplevel"></span></div>
+</div>
+<div id="debug"></div>
+<div id="toast" role="status"></div>
+<div id="vignette"></div>
+<div id="sleepfade" aria-hidden="true"></div>
+
+<div id="menu">
+  <div class="panel">
+    <h1>BLOCKCRAFT <span>3D</span></h1>
+    <p class="sub">Punch trees, craft tools, dig deep, and find diamonds.</p>
+    <button id="play" type="button" class="btn primary">Play</button>
+    <div class="row"><button id="mute" type="button" class="btn">Sound: On</button><button id="newworld" type="button" class="btn">New World</button></div>
+    <p id="controls"></p>
+    <p class="small"><a href="https://bot1010185.github.io/blockcraft/">Back to the Blockcraft site</a> · <a href="https://bot1010185.github.io/blockcraft/play.html">Play the original 2D game</a></p>
+  </div>
+</div>
+
+<div id="death" hidden><div class="panel"><h1>You died!</h1><button id="respawn" type="button" class="btn primary">Respawn</button></div></div>
+
+<div id="touchui">
+  <div id="stick" hidden><div id="knob"></div></div>
+  <button id="t-pause" type="button" aria-label="Pause">II</button>
+  <button id="t-bag" type="button" aria-label="Crafting">Bag</button>
+  <div class="tright">
+    <button id="t-mine" type="button" aria-label="Mine">⛏</button>
+    <button id="t-place" type="button" aria-label="Place">■</button>
+    <button id="t-jump" type="button" aria-label="Jump">▲</button>
+    <button id="t-sneak" type="button" aria-label="Sneak">▼</button>
+    <button id="t-sprint" type="button" aria-label="Sprint">»</button>
+  </div>
+</div>
+<noscript>Blockcraft 3D needs JavaScript and WebGL.</noscript>
+<script type="module" src="engine.js"></script>
+</body>
+</html>
